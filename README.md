@@ -19,12 +19,12 @@ Selamat datang di repositori web pribadi saya!  Website ini adalah tempat saya
 ---
 ## Teknologi yang Digunakan
 Website ini dibangun menggunakan:
-- **Frontend**: HTML/CSS/JS atau framework modern seperti React/Next.js- **Konten**: Markdown, HTML statis- **Deployment**: GitHub Pages (`fauzanaljazaree.github.io`)
+- **Frontend**: HTML/CSS/JS - **Konten**: Markdown, HTML statis- **Deployment**: GitHub Pages (`fauzanaljazaree.github.io`)
 ---
 ## Catatan Pengembangan
 - Website ini merupakan proyek jangka panjang, dan akan terus diperbarui seiring bertambahnya pengalaman dan eksperimen saya.- Kritik dan saran selalu terbuka untuk perbaikan lebih lanjut.
 ---
 ## Kontak & Sosial
-- Email: fauzanaljazaree@email.com *(ganti sesuai kebutuhan)*- LinkedIn: [linkedin.com/in/fauzanaljazaree](https://linkedin.com/in/fauzanaljazaree)- GitHub: [github.com/fauzanaljazaree](https://github.com/fauzanaljazaree)
+- Email: mohnurfauzan18@email.com - LinkedIn: [linkedin.com/in/fauzanaljazaree](https://www.linkedin.com/in/mohnurfauzan18/)- GitHub: [github.com/fauzanaljazaree](https://github.com/fauzanaljazaree)
 ---
 > *“Eksperimen adalah bentuk belajar yang paling jujur – karena hasilnya tak bisa disangkal.”*  > — Fauzan Aljazaree
