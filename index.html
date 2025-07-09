@@ -1,192 +1,21 @@
 <!DOCTYPE html>
-<html lang="id">
-   
-  <head>
-       
-    <meta charset="UTF-8" />
-       
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-       
-    <title>Nur Fauzan | Portfolio</title>
-       
-    <!-- External stylesheet -->
-       
-    <link rel="stylesheet" href="style.css" />
-     </head
-  > 
-  <body>
-       
-    <!-- ======= Header ======= -->   
-    <header>
-           
-      <nav>
-               
-        <div class="logo">nur</div>
-               
-        <div class="links">          <a href="#qa-web">QA &amp; Web Dev</a>          <a href="#electronics">Elektronika</a>          <a href="#blog">Blog</a>          <a href="#contact-form">Kontak</a>       </div>
-             
-      </nav>
-         
-    </header>
-       
-    <!-- ======= Hero ======= -->   
-    <section class="hero">
-           
-      <h1>Halo, saya Nur Fauzan</h1>
-           
-      <p>        Jr.&nbsp;Research Engineer &amp; calon QA Engineer yang gemar membangun        solusi perangkat lunak, elektronik, serta berbagi pengalaman tentang        integrated farming.     </p>
-            <button class="cta" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'})">        Hubungi Saya     </button>   
-    </section>
-       
-    <!-- ======= Main Content ======= -->   
-    <main>
-           
-      <!-- QA & Web Dev Projects -->     
-      <section id="qa-web">
-               
-        <div class="section-header">
-                   
-          <h2>Proyek QA &amp; Web Development</h2>
-                    <button class="add-btn" id="addProjectBtn">Tambah Proyek</button>       
-        </div>
-               
-        <div class="card-grid">
-                   
-          <div class="card">
-                       
-            <h3>SauceDemo Automation</h3>
-                       
-            <p>              Suite otomatisasi end-to-end dengan Selenium WebDriver, Mocha,              dan Mochawesome.           </p>
-                     
-          </div>
-                   
-          <div class="card">
-                       
-            <h3>Portfolio CI/CD Pipeline</h3>
-                       
-            <p>              Menyiapkan pipeline GitHub Actions untuk build &amp; test aplikasi              React.           </p>
-                     
-          </div>
-                   
-          <div class="card">
-                       
-            <h3>Accessibility Audit Tool</h3>
-                       
-            <p>CLI Node yang memeriksa aksesibilitas web menggunakan Axe-core.</p>
-                     
-          </div>
-                 
-        </div>
-             
-      </section>
-           
-      <!-- Electronics & Robotics Projects -->     
-      <section id="electronics">
-               
-        <h2>Proyek Elektronika &amp; Robotik</h2>
-               
-        <div class="card-grid">
-                   
-          <div class="card">
-                       
-            <h3>Smart Dehydrator</h3>
-                       
-            <p>              Pengering matahari hibrida dengan kontrol suhu berbasis ESP32              &amp; dashboard web.           </p>
-                     
-          </div>
-                   
-          <div class="card">
-                       
-            <h3>Line Follower V‑2</h3>
-                       
-            <p>              Robot pengikut garis untuk kompetisi dengan sensor array &amp; PID              tuning.           </p>
-                     
-          </div>
-                   
-          <div class="card">
-                       
-            <h3>Energy‑Efficient IoT Logger</h3>
-                       
-            <p>              Node IoT rendah daya yang merekam data suhu &amp; kelembapan untuk              pertanian terpadu.           </p>
-                     
-          </div>
-                 
-        </div>
-             
-      </section>
-           
-      <!-- Blog Articles -->     
-      <section id="blog">
-               
-        <div class="section-header">
-                   
-          <h2>Artikel Blog &amp; Hobi</h2>
-                    <button class="add-btn" id="addArticleBtn">Tambah Artikel</button>       
-        </div>
-               
-        <div class="card-grid">
-                   
-          <div class="card">
-                       
-            <h3>Mengolah Limbah Jadi Kompos Bokashi</h3>
-                       
-            <p>Cara sederhana membuat kompos bokashi untuk kebun sayur rumahan.</p>
-                     
-          </div>
-                   
-          <div class="card">
-                       
-            <h3>Integrasi Ikan &amp; Sayur (Aquaponik)</h3>
-                       
-            <p>Membangun sistem aquaponik skala kecil di pekarangan.</p>
-                     
-          </div>
-                   
-          <div class="card">
-                       
-            <h3>Merancang Pakan Fermentasi Unggas</h3>
-                       
-            <p>              Formula pakan dengan fermentasi probiotik untuk efisiensi pakan              ayam.           </p>
-                     
-          </div>
-                 
-        </div>
-             
-      </section>
-           
-      <!-- Contact Form -->     
-      <section id="contact-form">
-               
-        <h2>Hubungi Saya</h2>
-               
-        <form action="#" method="post">
-                    <label for="name">Nama</label>          <input type="text" id="name" name="name" required />           <label for="email">Email</label>          <input type="email" id="email" name="email" required />          
-          <label for="message">Pesan</label>          <textarea id="message" name="message" rows="5" required></textarea>           <button type="submit" class="submit">Kirim Pesan</button>       
-        </form>
-             
-      </section>
-         
-    </main>
-       
-    <!-- ======= Footer ======= -->   
-    <footer>
-           
-      <div class="inner">
-               
-        <p>&copy; 2025 Nur Fauzan. All rights reserved.</p>
-               
-        <p>          Email:          <a href="mailto:fauzan@example.com">fauzan@example.com</a> ·          LinkedIn:          <a href="https://linkedin.com/in/fauzan" target="_blank">linkedin.com/in/fauzan</a>       </p>
-             
-      </div>
-         
-    </footer>
-       
-    <!-- ======= Scripts ======= -->   
-    <script>
-            document.addEventListener("DOMContentLoaded", () => {        const createCard = (title, desc) => {          const card = document.createElement("div");          card.className = "card";          const h3 = document.createElement("h3");          h3.textContent = title;          const p = document.createElement("p");          p.textContent = desc;          card.appendChild(h3);          card.appendChild(p);          return card;        };
-                  // Project button        const addProjectBtn = document.getElementById("addProjectBtn");        const projectGrid = document.querySelector("#qa-web .card-grid");        addProjectBtn.addEventListener("click", () => {          const title = prompt("Judul proyek baru:");          const desc = prompt("Deskripsi singkat proyek:");          if (title && desc) {            projectGrid.appendChild(createCard(title, desc));          }        });
-                  // Article button        const addArticleBtn = document.getElementById("addArticleBtn");        const articleGrid = document.querySelector("#blog .card-grid");        addArticleBtn.addEventListener("click", () => {          const title = prompt("Judul artikel baru:");          const desc = prompt("Deskripsi singkat artikel:");          if (title && desc) {            articleGrid.appendChild(createCard(title, desc));          }        });      });   
-    </script>
-     
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coming Soon – Nur Fauzan QA Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="bg"></canvas>
+
+  <div class="container">
+    <h1 id="headline"></h1>
+    <p class="sub">Stay tuned 🚀</p>
+    <p class="sub">Under Development</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
