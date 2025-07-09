@@ -2,64 +2,130 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Coming Soon – nur</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- ===== CSS ===== -->
   <style>
-    html, body{
-      height:100%;
-      margin:0;
-      background:#0d0d0d;
-      color:#fff;
-      font-family:'Inconsolata',monospace;
-      overflow:hidden;      /* no scrollbar */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Inconsolata', monospace;
+      background: #0d0d0d;
+      color: white;
     }
 
-    /* Canvas bintang */
-    #bg{
-      position:fixed;
-      top:0; left:0;
-      width:100%; height:100%;
-      z-index:0;            /* di belakang teks, tapi di atas background */
+    #bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
 
-    /* Teks di tengah */
-    .container{
-      position:relative;
-      z-index:10;           /* pasti di atas canvas */
-      height:100%;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      pointer-events:none;
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 1;
     }
 
-    h1{
-      margin:0;
-      font-size:3.2rem;
-      letter-spacing:2px;
-      animation:flicker 3s infinite;
-    }
-    .sub{
-      margin-top:1rem;
-      font-size:1.2rem;
-      opacity:.8;
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      animation: flicker 3s infinite;
     }
 
-    /* Kedip lampu neon */
-    @keyframes flicker{
-      0%,18%,22%,25%,53%,57%,100%{opacity:1}
-      20%,24%,55%{opacity:.35}
+    p.sub {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+      20%, 22%, 24%, 55% { opacity: 0.4; }
     }
   </style>
 </head>
 
 <body>
-  <!-- Canvas animasi bintang -->
   <canvas id="bg"></canvas>
+
+  <div class="container">
+    <h1 id="headline"></h1>
+    <p class="sub">Stay tuned 🚀</p>
+  </div>
+
+  <script>
+    // Mesin ketik
+    const text = "Website under development...";
+    let i = 0;
+    const headline = document.getElementById("headline");
+
+    function typeWriter() {
+      if (i < text.length) {
+        headline.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+      }
+    }
+    typeWriter();
+
+    // Starfield
+    const canvas = document.getElementById("bg");
+    const ctx = canvas.getContext("2d");
+    let stars = [];
+    const numStars = 300;
+
+    function initStars() {
+      stars = [];
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          z: Math.random() * canvas.width
+        });
+      }
+    }
+
+    function moveStars() {
+      ctx.fillStyle = "#0d0d0d";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "white";
+      for (let i = 0; i < numStars; i++) {
+        let star = stars[i];
+        star.z -= 2;
+        if (star.z <= 0) {
+          star.z = canvas.width;
+        }
+
+        let k = 128.0 / star.z;
+        let px = star.x * k + canvas.width / 2;
+        let py = star.y * k + canvas.height / 2;
+
+        if (px >= 0 && px < canvas.width && py >= 0 && py < canvas.height) {
+          let size = (1 - star.z / canvas.width) * 2;
+          ctx.beginPath();
+          ctx.arc(px, py, size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      requestAnimationFrame(moveStars);
+    }
+
+    window.addEventListener("resize", initStars);
+    initStars();
+    moveStars();
+  </script>
+</body>
+</html>
